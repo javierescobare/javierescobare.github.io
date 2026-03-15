@@ -12,112 +12,250 @@
         gtag('config', 'G-T27PDGQ6QC');
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Software Engineer, Microsoft Certified, Xamarin Certified Mobile Professional & Scrum Certified Professional">
-
+        content="Javier Escobar Espinoza — Senior Software Engineer specialized in .NET backend and AWS cloud architecture." />
+    <meta name="author" content="Javier Escobar Espinoza" />
+    <meta property="og:title" content="Javier Escobar Espinoza — Senior Software Engineer" />
+    <meta property="og:description"
+        content="I turn complex ideas into robust, scalable software. Clean architecture, real results." />
+    <meta property="og:url" content="https://javierescobar.net" />
     <title>Javier Escobar Espinoza</title>
-
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="theme-color" content="#ffffff">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Sen&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2fbc2e710c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="row">
-                <div class="col s12 m4">
-                    <div class="circle-avatar">
-                        <img src="images/javier.jpg" alt="Javier Escobar Espinoza">
-                    </div>
-                    <div class="section">
-                        <h1 class="name-title">Javier Escobar Espinoza</h1>
-                        <span>Software Engineer, Microsoft Certified, Xamarin Certified Mobile Professional & Scrum
-                            Certified Professional</span>
-                    </div>
-                </div>
+    <div class="inner">
 
-                <div class="col s12 m4">
-                    <div class="section left-align">
-                        <h2>About me</h2>
-                        <p>Passionate .NET Developer with over 6 years of experience. Adept at crafting efficient
-                            solutions through expertise in clean code and cloud technologies.
-                        </p>
-                    </div>
-                    <div class="section left-align">
-                        <h2>Blog</h2>
-                        <p>From time to time, I explore my blog, writing and sharing knowledge. It's a space where I
-                            enjoy expressing thoughts and insights.</p>
-                        <div class="circle-buttons">
-                            <ul class="icons">
-                                <li>
-                                    <a href="https://blog.javierescobar.net" class="button" target="_blank">
-                                        Go to blog
-                                        <i class="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
+        <div class="lang-bar">
+            <div class="lang-dropdown" id="langDropdown">
+                <div class="lang-selected" id="langSelected" onclick="toggleDropdown()">
+                    <span class="lang-flag" id="langFlag">🇪🇸</span>
+                    <span id="langLabel">Español</span>
+                    <span class="lang-chevron">▼</span>
+                </div>
+                <div class="lang-menu">
+                    <div class="lang-option" onclick="setLang('es')"><span class="lang-flag">🇪🇸</span> Español</div>
+                    <div class="lang-option" onclick="setLang('en')"><span class="lang-flag">🇬🇧</span> English</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="avatar-wrap">
+                <!-- Replace src with your actual photo URL -->
+                <img src="./images/javier.jpg" alt="Javier Escobar Espinoza" />
+                <div class="avatar-ring"></div>
+            </div>
+            <div>
+                <h1>Javier Escobar Espinoza</h1>
+                <div class="role" id="t-role"></div>
+            </div>
+        </div>
+
+        <div class="slabel" id="t-about-label"></div>
+        <div class="about-card">
+            <div class="about-headline" id="t-headline"></div>
+            <div class="about-secondary" id="t-subheadline"></div>
+            <div class="about-body" id="t-body"></div>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-card"><span class="stat-num">7+</span><span class="stat-label" id="t-s1"></span></div>
+            <div class="stat-card"><span class="stat-num">4</span><span class="stat-label" id="t-s2"></span></div>
+            <div class="stat-card"><span class="stat-num">2</span><span class="stat-label" id="t-s3"></span></div>
+        </div>
+
+        <div class="two-col">
+            <div class="card">
+                <div class="slabel" id="t-stack-label"></div>
+                <div class="skills-grid">
+                    <span class="tag tag-primary">C# .NET</span>
+                    <span class="tag tag-primary">ASP.NET Core</span>
+                    <span class="tag tag-primary">Microservices</span>
+                    <span class="tag tag-aws">AWS Lambda</span>
+                    <span class="tag tag-aws">AWS SQS/SNS</span>
+                    <span class="tag tag-aws">AWS RDS</span>
+                    <span class="tag tag-aws">Serverless</span>
+                    <span class="tag tag-neutral">Docker</span>
+                    <span class="tag tag-neutral">Kubernetes</span>
+                    <span class="tag tag-neutral">PostgreSQL</span>
+                    <span class="tag tag-neutral">SQL Server</span>
+                    <span class="tag tag-neutral">Node.js</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="slabel" id="t-cert-label"></div>
+                <div style="margin-top:12px">
+                    <div class="cert-item">
+                        <div class="cert-dot" style="background:#3b9eff"></div>
+                        <div>
+                            <div class="cert-name">Microsoft Azure Fundamentals</div>
+                            <div class="cert-sub">microsoft certified</div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="section left-align">
-                        <h2>Skills</h2>
-                        <ul>
-                            <li>C# .NET</li>
-                            <li>AWS</li>
-                            <li>Azure</li>
-                            <li>Xamarin</li>
-                            <li>Node.js</li>
-                            <li>Git</li>
-                            <li>SQL Server</li>
-                            <li>PostgreSQL</li>
-                        </ul>
+                    <div class="cert-item">
+                        <div class="cert-dot" style="background:#34d399"></div>
+                        <div>
+                            <div class="cert-name">Scrum Foundation Professional</div>
+                            <div class="cert-sub">SFPC</div>
+                        </div>
                     </div>
-                    <div class="section left-align">
-                        <h2>Find me on</h2>
-                        <div class="circle-buttons">
-                            <ul class="icons unordered">
-                                <li>
-                                    <a href="https://github.com/javierescobare" class="button" target="_blank">
-                                        <i class="fa-brands fa-github"></i>GitHub
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com/in/javierescobare/" class="button"
-                                        target="_blank">
-                                        <i class="fa-brands fa-linkedin-in"></i>LinkedIn
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://stackoverflow.com/users/5745027/javier-escobar-espinoza"
-                                        class="button" target="_blank">
-                                        <i class="fa-brands fa-stack-overflow"></i>Stack Overflow
-                                    </a>
-                                </li>
-                            </ul>
+                    <div class="cert-item">
+                        <div class="cert-dot" style="background:#818cf8"></div>
+                        <div>
+                            <div class="cert-name">Scrum Product Owner Professional</div>
+                            <div class="cert-sub">SPOPC</div>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-dot" style="background:#fb923c"></div>
+                        <div>
+                            <div class="cert-name" id="t-cert-ecce"></div>
+                            <div class="cert-sub" id="t-cert-ecce-sub"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="cta-card">
+            <h3 id="t-cta-title"></h3>
+            <p id="t-cta-body"></p>
+            <div class="cta-btns">
+                <!-- Replace href with your contact email or contact page -->
+                <a class="btn-primary" id="t-cta-btn1" href="mailto:javier@javierescobar.net"></a>
+                <a class="btn-secondary" id="t-cta-btn2" href="https://linkedin.com/in/javierescobare" target="_blank"
+                    rel="noopener"></a>
+            </div>
+        </div>
+
+        <div class="slabel" id="t-social-label"></div>
+        <div class="socials">
+            <a class="social-link" href="https://linkedin.com/in/javierescobare" target="_blank" rel="noopener">
+                <svg class="sico" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+                LinkedIn
+            </a>
+            <!-- Replace with your actual GitHub username if different -->
+            <a class="social-link" href="https://github.com/javierescobare" target="_blank" rel="noopener">
+                <svg class="sico" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                GitHub
+            </a>
+            <a class="social-link" href="https://app.pluralsight.com/profile/javierescobare" target="_blank"
+                rel="noopener">
+                <svg class="sico" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-1.25 16.518l-4.5-3 4.5-3v6zm2.5 0V10.518l4.5 3-4.5 3z" />
+                </svg>
+                Pluralsight
+            </a>
+            <a class="social-link" href="https://blog.javierescobar.net" target="_blank" rel="noopener">
+                <svg class="sico" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93s3.06-7.44 7-7.93v15.86zm2 0V4.07c3.94.49 7 3.85 7 7.93s-3.06 7.44-7 7.93z" />
+                </svg>
+                Blog
+            </a>
+        </div>
+
+        <div class="footer">
+            <span class="footer-mono">javierescobar.net</span>
+            <span class="footer-mono">Peru</span>
+        </div>
+
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        const copy = {
+            es: {
+                flag: '🇪🇸', langLabel: 'Español',
+                role: '// Ingeniero de Software Senior · .NET · AWS · Backend',
+                aboutLabel: 'sobre mí',
+                headline: 'Convierto ideas complejas en software robusto y escalable.',
+                subheadline: '// Arquitectura limpia, resultados reales.',
+                body: 'Con <strong>más de 7 años de experiencia profesional</strong>, me especializo en <strong>desarrollo backend con C# .NET</strong> y <strong>arquitectura cloud en AWS</strong>: microservicios, serverless y sistemas orientados a eventos.<br><br>Actualmente trabajo como Senior Software Engineer en <strong>TRANZACT</strong>, empresa estadounidense y líder en ventas de seguros a gran volumen que llega a millones de consumidores cada semana. Allí diseño e implemento soluciones backend que operan a escala en todo el hemisferio occidental.<br><br>Más allá de mi trabajo diario, he ayudado a startups y empresas en Perú y el mundo a convertir ideas en software real y funcional. Siempre estoy abierto a proyectos interesantes.',
+                s1: 'años de experiencia', s2: 'años con AWS', s3: 'startups co-fundadas',
+                stackLabel: 'tecnologías', certLabel: 'certificaciones',
+                certEcce: 'ECCE — Competencia en Inglés', certEcceSub: 'nivel profesional completo',
+                ctaTitle: 'Trabajemos juntos',
+                ctaBody: 'He ayudado a startups y empresas en Perú y el mundo a convertir ideas en software real. Si tienes un proyecto en mente, una app, un sistema o algo intermedio, me encantaría escucharte.',
+                ctaBtn1: '✉ Escríbeme', ctaBtn2: 'Ver LinkedIn',
+                socialLabel: 'encuéntrame en',
+            },
+            en: {
+                flag: '🇬🇧', langLabel: 'English',
+                role: '// Senior Software Engineer · .NET · AWS · Backend',
+                aboutLabel: 'about',
+                headline: 'I turn complex ideas into robust, scalable software.',
+                subheadline: '// Clean architecture, real results.',
+                body: 'With <strong>7+ years of professional experience</strong>, I specialize in <strong>C# .NET backend development</strong> and <strong>AWS cloud architecture</strong>: microservices, serverless, and event-driven systems.<br><br>Currently working as a Senior Software Engineer at <strong>TRANZACT</strong>, a US-based company and market leader in high-volume insurance sales that reaches millions of consumers every week. There I design and implement backend solutions that operate at scale across the Western Hemisphere.<br><br>Beyond my day-to-day work, I\'ve helped startups and companies across Peru and beyond turn ideas into real, working software. I\'m always open to interesting projects.',
+                s1: 'years experience', s2: 'years with AWS', s3: 'startups co-founded',
+                stackLabel: 'stack', certLabel: 'certifications',
+                certEcce: 'ECCE — English Competency', certEcceSub: 'full professional level',
+                ctaTitle: 'Let\'s work together',
+                ctaBody: 'I\'ve helped startups and companies across Peru and beyond turn ideas into real, working software. If you have a project in mind, an app, a system, or something in between, I\'d love to hear about it.',
+                ctaBtn1: '✉ Get in touch', ctaBtn2: 'View LinkedIn',
+                socialLabel: 'find me on',
+            }
+        };
+
+        function setLang(lang) {
+            const t = copy[lang];
+            document.documentElement.lang = lang;
+            document.getElementById('langFlag').textContent = t.flag;
+            document.getElementById('langLabel').textContent = t.langLabel;
+            document.getElementById('t-role').textContent = t.role;
+            document.getElementById('t-about-label').textContent = t.aboutLabel;
+            document.getElementById('t-headline').textContent = t.headline;
+            document.getElementById('t-subheadline').textContent = t.subheadline;
+            document.getElementById('t-body').innerHTML = t.body;
+            document.getElementById('t-s1').textContent = t.s1;
+            document.getElementById('t-s2').textContent = t.s2;
+            document.getElementById('t-s3').textContent = t.s3;
+            document.getElementById('t-stack-label').textContent = t.stackLabel;
+            document.getElementById('t-cert-label').textContent = t.certLabel;
+            document.getElementById('t-cert-ecce').textContent = t.certEcce;
+            document.getElementById('t-cert-ecce-sub').textContent = t.certEcceSub;
+            document.getElementById('t-cta-title').textContent = t.ctaTitle;
+            document.getElementById('t-cta-body').textContent = t.ctaBody;
+            document.getElementById('t-cta-btn1').textContent = t.ctaBtn1;
+            document.getElementById('t-cta-btn2').textContent = t.ctaBtn2;
+            document.getElementById('t-social-label').textContent = t.socialLabel;
+            document.querySelectorAll('.lang-option').forEach(o => o.classList.remove('active'));
+            document.querySelectorAll('.lang-option')[lang === 'es' ? 0 : 1].classList.add('active');
+            localStorage.setItem('lang', lang);
+            closeDropdown();
+        }
+
+        function toggleDropdown() { document.getElementById('langDropdown').classList.toggle('open'); }
+        function closeDropdown() { document.getElementById('langDropdown').classList.remove('open'); }
+
+        document.addEventListener('click', function (e) {
+            if (!document.getElementById('langDropdown').contains(e.target)) closeDropdown();
+        });
+
+        // Language priority: localStorage > browser (Spanish if match, English otherwise)
+        const saved = localStorage.getItem('lang');
+        const browserLang = (navigator.language || '').toLowerCase();
+        const defaultLang = saved || (browserLang.startsWith('es') ? 'es' : 'en');
+        setLang(defaultLang);
+    </script>
 </body>
 
 </html>
