@@ -121,7 +121,7 @@
         </header>
 
         <main id="main">
-            <div class="cover" aria-labelledby="hero-title">
+            <div class="cover" data-mood="base" data-hero aria-labelledby="hero-title">
                 <div>
                     <h1 id="hero-title" class="in" translate="no">Javier<br>Escobar<span class="dot">.</span></h1>
                     <p class="tagline in" style="--d: 80ms">Software engineer automating his life.</p>
@@ -131,6 +131,11 @@
                         <source srcset="/images/avatar.webp" type="image/webp" />
                         <img src="/images/avatar.jpg" alt="Avatar of Javier Escobar" width="600" height="600" fetchpriority="high" />
                     </picture>
+                    <picture class="brow" aria-hidden="true">
+                        <source srcset="/images/avatar-ceja.webp" type="image/webp" />
+                        <img src="/images/avatar-ceja.jpg" alt="" width="600" height="600" decoding="async"
+                            fetchpriority="low" />
+                    </picture>
                     <picture class="laugh" aria-hidden="true">
                         <source srcset="/images/avatar-risa.webp" type="image/webp" />
                         <img src="/images/avatar-risa.jpg" alt="" width="600" height="600" decoding="async"
@@ -139,7 +144,7 @@
                 </div>
             </div>
 
-            <div class="intro off">
+            <div class="intro off" data-mood="base" data-hero>
                 <p class="lede in" style="--d: 180ms">I’m a senior software engineer based in Peru. On weekdays I design reliable
                     systems on AWS and lead the teams that run them. The rest of the time I automate my home
                     and my life with code, AI and home automation.</p>
@@ -154,7 +159,7 @@
                 </ul>
             </div>
 
-            <section id="profile" class="split reveal" aria-labelledby="about-title">
+            <section id="profile" class="split reveal" data-mood="base" aria-labelledby="about-title">
                 <h2 id="about-title">Profile</h2>
                 <div class="off prose">
                     <p>I work as a Senior Software Engineer at TRANZACT, a US-based company focused on high-volume
@@ -167,7 +172,7 @@
                 </div>
             </section>
 
-            <section id="leadership" class="split reveal" aria-labelledby="leadership-title">
+            <section id="leadership" class="split reveal" data-mood="base" aria-labelledby="leadership-title">
                 <h2 id="leadership-title">Leadership</h2>
                 <div class="off prose">
                     <p>I lead projects from the first conversation with the business until the system is running
@@ -179,7 +184,7 @@
         </main>
     </div>
 
-    <section id="tools" class="band band-arena reveal" aria-labelledby="stack-title">
+    <section id="tools" data-mood="brow" class="band band-arena reveal" aria-labelledby="stack-title">
         <div class="wrap">
             <h2 id="stack-title"><span class="mark">Tools</span></h2>
             <dl class="stack" aria-label="Technology stack">
@@ -212,7 +217,7 @@
     </section>
 
 
-    <section id="contact" class="band band-azul on-dark reveal" aria-labelledby="contact-title">
+    <section id="contact" data-mood="laugh" class="band band-azul on-dark reveal" aria-labelledby="contact-title">
         <div class="wrap">
             <h2 id="contact-title">Let’s talk.</h2>
             <div class="off">
@@ -225,7 +230,7 @@
         </div>
     </section>
 
-    <footer class="footer band-tinta on-dark">
+    <footer class="footer band-tinta on-dark" data-mood="laugh">
         <div class="wrap">
             <span class="wm" translate="no">Javier Escobar<i>.</i></span>
             <ul class="ext" aria-label="External links">
@@ -238,6 +243,12 @@
             <p id="footerRev">javierescobar.net · 2026</p>
         </div>
     </footer>
+
+    <div class="buddy" id="buddy" aria-hidden="true">
+        <img class="face face-base" src="/images/buddy-base.webp" alt="" width="192" height="192" decoding="async" />
+        <img class="face face-brow" src="/images/buddy-ceja.webp" alt="" width="192" height="192" decoding="async" />
+        <img class="face face-laugh" src="/images/buddy-risa.webp" alt="" width="192" height="192" decoding="async" />
+    </div>
 
     <div class="consent-banner" id="consentBanner" hidden>
         <p>I use Google Analytics cookies only to measure visits.</p>

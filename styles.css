@@ -273,12 +273,18 @@ section {
 }
 
 /* segunda expresión del avatar, encima de la base; aparece al pasar el cursor */
+.avatar .brow,
 .avatar .laugh {
     position: absolute;
     inset: 0;
     opacity: 0;
     pointer-events: none;
     transition: opacity 160ms ease;
+}
+
+html[data-mood="brow"] .avatar .brow,
+html[data-mood="laugh"] .avatar .laugh {
+    opacity: 1;
 }
 
 /* el retrato trae un borde blanco fino; el zoom lo deja fuera del círculo */
@@ -426,7 +432,7 @@ section {
 
 /* ============ Pie ============ */
 .footer {
-    padding-block: 56px 40px;
+    padding-block: 56px 104px;
     font-size: 15px;
     color: var(--arena);
 }
@@ -456,6 +462,60 @@ section {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+/* ============ Avatar compañero ============ */
+/* Un avatar pequeño que te acompaña fuera de la portada y cambia de expresión según lo que ves o tocas. */
+.buddy {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 40;
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: var(--arena);
+    box-shadow: 0 0 0 3px var(--fondo);
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+    pointer-events: none;
+    transition: opacity 300ms var(--ease-out), transform 300ms var(--ease-out);
+}
+
+html[data-buddy] .buddy {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+
+.buddy .face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.09);
+    transition: opacity 160ms ease;
+}
+
+.buddy .face-base,
+html[data-mood="brow"] .buddy .face-brow,
+html[data-mood="laugh"] .buddy .face-laugh {
+    opacity: 1;
+}
+
+@keyframes bump {
+    40% {
+        transform: scale(1.1);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .buddy.bump {
+        animation: bump 240ms var(--ease-out);
+    }
 }
 
 /* ============ Aviso de cookies ============ */
@@ -699,6 +759,13 @@ section {
 
     .actions {
         align-items: flex-start;
+    }
+
+    .buddy {
+        right: 12px;
+        bottom: 12px;
+        width: 52px;
+        height: 52px;
     }
 
     .consent-banner {
