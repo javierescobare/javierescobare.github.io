@@ -1,7 +1,7 @@
 {
     "name": "Javier Escobar Espinoza",
     "short_name": "Javier Escobar",
-    "description": "Ingeniero de software senior y Technical Lead. Arquitectura cloud y desarrollo de software: sistemas confiables en AWS, de la idea a producción.",
+    "description": "Ingeniero de software senior y Technical Lead. Sistemas confiables en AWS y una vida cada vez más automatizada.",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -14,7 +14,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#f3f6fa",
-    "background_color": "#f3f6fa",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
     "display": "standalone"
 }
